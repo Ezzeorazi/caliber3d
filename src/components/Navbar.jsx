@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -11,9 +11,14 @@ const Navbar = () => {
     <header className="bg-slate-800 border-b border-slate-700">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <span className="text-xl font-bold tracking-wide">
-          Caliber<span className="text-cyan-400">3D</span>
-        </span>
+        <Link
+          to="/"
+          className="text-xl font-bold tracking-wide text-white"
+        >
+          <span className="text-xl font-bold tracking-wide">
+            Caliber<span className="text-cyan-400">3D</span>
+          </span>
+        </Link>
 
         {/* Desktop menu */}
         <div className="hidden md:flex gap-6">

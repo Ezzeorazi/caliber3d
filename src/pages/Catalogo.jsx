@@ -3,21 +3,39 @@ import CatalogCard from "../components/CatalogCard";
 const items = [
   {
     id: 1,
-    title: "Soporte Técnico Industrial",
-    material: "PLA+",
+    title: "Labubu llavero",
+    material: "PLA",
     time: "4h 30m",
-    price: "4500",
-    image: "/assets/soporte.png",
+    price: "300",
+    images: [
+      "src/assets/Labubu.svg",
+      "src/assets/Labubu-2.svg",
+    ],
   },
   {
     id: 2,
-    title: "Llavero Personalizado",
+    title: "Llavero Copa del mundo",
     material: "PLA Silk",
     time: "1h 20m",
-    price: "1500",
-    image: "/assets/llavero.png",
+    price: "150",
+    images: [
+      "src/assets/Copa-del-mundo.svg",
+      "src/assets/Copa-del-mundo-2.svg",
+    ],
+  },
+  {
+    id: 3,
+    title: "Lagartija articulada",
+    material: "PLA Silk",
+    time: "4h 55m",
+    price: "450",
+    images: [
+      "src/assets/Lagartija.svg",
+      "src/assets/Lagartija-2.svg",
+    ],
   },
 ];
+
 
 export default function Catalogo() {
   return (

@@ -74,7 +74,7 @@ export default function CatalogCard({ item }) {
           <span className="text-orange-500 font-bold">${item.price}</span>
 
           <a
-            href={`https://wa.me/52493415957226?text=Hola! Quiero cotizar el producto: ${item.title}`}
+            href={`https://wa.me/5493415957226?text=Hola! Quiero cotizar el producto: ${item.title}`}
             target="_blank"
             className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-700 text-white rounded"
           >

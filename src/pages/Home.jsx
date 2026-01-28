@@ -122,7 +122,7 @@ const Home = () => {
         <div className="rounded-2xl overflow-hidden border border-border">
           {/* Reemplazá la imagen por la que prefieras */}
           <img
-            src="/src/assets/PORTAL-MAYA.webp"
+            src="/src/assets/PORTAL-MAYA.jpeg"
             alt="Playa del Carmen - Quinta Avenida"
             className="w-full h-full object-cover"
           />

@@ -6,13 +6,14 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const linkClass =
-  "block py-2 text-base md:text-sm hover:text-cyan-400 transition";
+    "block py-2 text-sm hover:text-cyan transition-colors";
+
 
 
   return (
-    <header className="bg-slate-800 border-b border-slate-700">
+    <header className="bg-surface border-b border-border">
       <nav className="max-w-7xl mx-auto px-3 py-2 flex items-center justify-between">
-        
+
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img
@@ -32,7 +33,7 @@ const Navbar = () => {
 
         {/* Hamburger */}
         <button
-          className="md:hidden text-slate-100"
+          className="md:hidden text-text"
           onClick={() => setOpen(!open)}
           aria-label="Abrir menú"
         >
@@ -58,7 +59,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-slate-700 bg-slate-800 px-4 pb-4">
+        <div className="md:hidden border-t border-border bg-surface px-4 pb-4">
+
           <NavLink onClick={() => setOpen(false)} to="/" className={linkClass}>Home</NavLink>
           <NavLink onClick={() => setOpen(false)} to="/catalogo" className={linkClass}>Catálogo</NavLink>
           <NavLink onClick={() => setOpen(false)} to="/sobre-nosotros" className={linkClass}>Sobre Nosotros</NavLink>

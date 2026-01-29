@@ -6,7 +6,7 @@ const Contacto = () => {
         Envíanos tu idea o archivo STL y te respondemos con una cotización
         personalizada en menos de 24 horas.
       </p>
-      <p className="text-slate-400">Email: contacto@caliber3d.com</p>
+      <p className="text-slate-400">Email: ezequiel.orazi90@gmail.com</p>
     </section>
   );
 };

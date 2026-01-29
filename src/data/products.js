@@ -4,7 +4,8 @@ const products = [
     title: "Labubu llavero",
     material: "PLA",
     time: "4h 30m",
-    price: "300",
+    timeMinutes: 270,
+    price: 300,
     description:
       "Llavero personalizado impreso en 3D, resistente, liviano y totalmente personalizable.",
     images: [
@@ -17,7 +18,8 @@ const products = [
     title: "Llavero Copa del Mundo",
     material: "PLA Silk",
     time: "1h 20m",
-    price: "150",
+    timeMinutes: 80,
+    price: 150,
     description:
       "Llavero conmemorativo impreso en PLA Silk, ideal para regalos y souvenirs.",
     images: [
@@ -30,7 +32,8 @@ const products = [
     title: "Lagartija articulada",
     material: "PLA Silk",
     time: "4h 55m",
-    price: "450",
+    timeMinutes: 295,
+    price: 450,
     description:
       "Figura articulada impresa en 3D, flexible, resistente y de alta calidad.",
     images: [

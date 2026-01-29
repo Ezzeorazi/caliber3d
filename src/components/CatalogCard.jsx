@@ -1,27 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import placeholder from "../assets/placeholder.svg";
 
 export default function CatalogCard({ item }) {
   const [current, setCurrent] = useState(0);
+  const images = item.images && item.images.length ? item.images : [placeholder];
 
   useEffect(() => {
-    if (!item.images || item.images.length <= 1) return;
+    if (!images || images.length <= 1) return;
 
     const interval = setInterval(() => {
       setCurrent(prev =>
-        prev === item.images.length - 1 ? 0 : prev + 1
+        prev === images.length - 1 ? 0 : prev + 1
       );
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [item.images]);
+  }, [images]);
 
   return (
     <div className="bg-slate-800 border border-slate-700 rounded-lg overflow-hidden hover:border-orange-500 transition group">
 
       {/* Slider */}
       <div className="relative h-56 bg-slate-900 overflow-hidden">
-        {item.images.map((img, index) => (
+        {images.map((img, index) => (
           <img
             key={index}
             src={img}
@@ -47,7 +49,7 @@ export default function CatalogCard({ item }) {
 
         {/* Dots */}
         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
-          {item.images.map((_, i) => (
+          {images.map((_, i) => (
             <span
               key={i}
               className={`w-2 h-2 rounded-full ${
@@ -76,6 +78,7 @@ export default function CatalogCard({ item }) {
           <a
             href={`https://wa.me/5493415957226?text=Hola! Quiero cotizar el producto: ${item.title}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-700 text-white rounded"
           >
             Consultar

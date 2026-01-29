@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import products from "../data/products";
+import placeholder from "../assets/placeholder.svg";
 
 export default function ProductoDetalle() {
   const { id } = useParams();
@@ -22,9 +23,9 @@ export default function ProductoDetalle() {
 
       {/* Imagen */}
       <img
-        src={producto.images?.[0]}
+        src={producto.images?.[0] ?? placeholder}
         alt={producto.title}
-        onError={(e) => e.currentTarget.src = "src/assets/placeholder.png"}
+        onError={(e) => e.currentTarget.src = placeholder}
         className="w-full bg-slate-900 rounded-lg"
       />
 

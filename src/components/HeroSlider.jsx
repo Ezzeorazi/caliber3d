@@ -41,43 +41,34 @@ export default function HeroSlider() {
           />
         ))}
 
-        {/* Overlay técnico */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg/90 via-bg/40 to-transparent" />
+        {/* Overlay general (más sutil) */}
+        <div className="absolute inset-0 bg-gradient-to-transparent from-black/30 via-transparent to-transparent" />
 
         {/* Contenido */}
-        <div className="relative z-10 h-full flex flex-col justify-end px-4 sm:px-6 pb-4 sm:pb-6">
-          <h1 className="text-lg sm:text-2xl md:text-4xl font-bold text-text max-w-xl leading-tight">
-            Impresión 3D de alta precisión
-          </h1>
+        <div className="relative z-10 h-full flex items-center sm:items-end justify-center sm:justify-start px-4 sm:px-6 py-6 sm:pb-6">
 
-          <p className="mt-2 text-muted text-xs sm:text-sm md:text-base max-w-lg">
-            Prototipos funcionales, piezas técnicas y producción en baja escala
-            con acabado profesional.
-          </p>
+          {/* Click overlay (todo el slider lleva a catálogo) */}
+          <Link to="/catalogo" aria-label="Ver catálogo" className="absolute inset-0 z-20 cursor-pointer" />
+          
+          {/* Caja técnica minimal y sutil */}
+          <div className="w-full sm:w-auto max-w-lg space-y-2 bg-transparent sm:bg-bg/30 backdrop-blur-none sm:backdrop-blur-sm border border-transparent sm:border-accent/20 rounded-lg p-3 sm:p-5 shadow-none sm:shadow-md text-center sm:text-left relative z-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white drop-shadow-md leading-snug">
+              Impresión 3D de alta precisión
+            </h1>
 
-          <div className="mt-4 flex gap-3">
-            <Link
-              to="/catalogo"
-              className="
-                bg-accent hover:bg-accent-hover
-                text-bg px-4 py-2 text-xs sm:text-sm
-                rounded-md font-medium transition
-              "
-            >
-              Ver catálogo
-            </Link>
+            <p className="hidden sm:block text-white/85 text-sm sm:text-base max-w-prose leading-relaxed">
+              Prototipos funcionales, piezas técnicas y producción en baja escala con acabado profesional.
+            </p>
 
-            <Link
-              to="/contacto"
-              className="
-                border border-border text-text
-                hover:bg-surface px-4 py-2
-                text-xs sm:text-sm rounded-md transition
-              "
-            >
-              Cotizar pieza
-            </Link>
           </div>
+
+          {/* CTA visible (toca cualquiera parte del slider gracias al overlay) */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+            <span className="bg-black/50 text-white text-sm sm:text-base px-3 py-1 rounded-full backdrop-blur-sm">
+              Ver catálogo
+            </span>
+          </div>
+
         </div>
       </div>
     </section>

@@ -81,7 +81,7 @@ export default function CatalogCard({ item }) {
             rel="noopener noreferrer"
             className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-700 text-white rounded"
           >
-            Consultar
+            Consultar por Whatsapp
           </a>
         </div>
       </div>

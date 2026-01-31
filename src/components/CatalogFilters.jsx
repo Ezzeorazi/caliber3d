@@ -16,34 +16,50 @@ export default function CatalogFilters({
         className="
           w-full px-4 py-2 rounded-md
           bg-bg border border-border text-text
+          placeholder:text-muted
           focus:outline-none focus:ring-2 focus:ring-accent/40
+          transition
         "
       />
 
       {/* Categorías */}
       <div className="flex flex-wrap gap-2">
+        {/* Todas */}
         <button
           onClick={() => setCategory("all")}
-          className={`px-3 py-1 rounded-full text-sm transition
+          className={`
+            px-4 py-1.5 rounded-full text-sm font-medium
+            border
+            cursor-pointer select-none
+            transition-all duration-200
+
             ${
               category === "all"
-                ? "bg-accent text-bg"
-                : "bg-surface text-muted hover:text-text"
-            }`}
+                ? "bg-accent text-bg border-accent shadow-md scale-[1.03]"
+                : "bg-surface text-muted border-border hover:text-text hover:border-accent"
+            }
+          `}
         >
           Todas
         </button>
 
+        {/* Categorías dinámicas */}
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setCategory(cat)}
-            className={`px-3 py-1 rounded-full text-sm capitalize transition
+            className={`
+              px-4 py-1.5 rounded-full text-sm font-medium capitalize
+              border
+              cursor-pointer select-none
+              transition-all duration-200
+
               ${
                 category === cat
-                  ? "bg-accent text-bg"
-                  : "bg-surface text-muted hover:text-text"
-              }`}
+                  ? "bg-accent text-bg border-accent shadow-md scale-[1.03]"
+                  : "bg-surface text-muted border-border hover:text-text hover:border-accent"
+              }
+            `}
           >
             {cat}
           </button>

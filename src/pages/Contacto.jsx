@@ -12,7 +12,7 @@ const Contacto = () => {
         </h1>
         <p className="text-muted max-w-2xl mx-auto">
           ¿Tenés una idea, un proyecto o necesitás una pieza específica?
-          Escribinos y lo vemos juntos. Sin compromiso y sin vueltas raras.
+          Escribinos y lo vemos juntos.
         </p>
       </header>
 
@@ -113,7 +113,7 @@ const Contacto = () => {
           </button>
 
           <p className="text-xs text-muted text-center">
-            Respondemos lo antes posible. Normalmente no mordemos.
+            Respondemos lo antes posible. 
           </p>
         </form>
 
@@ -128,7 +128,7 @@ const Contacto = () => {
               Si preferís algo rápido, escribinos directo por WhatsApp.
             </p>
             <a
-              href="https://wa.me/543415957226"
+              href="https://wa.me/529982017863"
               target="_blank"
               rel="noopener noreferrer"
               className="
@@ -139,7 +139,7 @@ const Contacto = () => {
                 font-medium transition
               "
             >
-              +54 341 595 7226
+              +52 998 201 7863
             </a>
           </div>
 

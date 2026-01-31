@@ -52,9 +52,8 @@ export default function CatalogCard({ item }) {
           {images.map((_, i) => (
             <span
               key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === current ? "bg-orange-500" : "bg-slate-500"
-              }`}
+              className={`w-2 h-2 rounded-full ${i === current ? "bg-orange-500" : "bg-slate-500"
+                }`}
             />
           ))}
         </div>
@@ -76,7 +75,7 @@ export default function CatalogCard({ item }) {
           <span className="text-orange-500 font-bold">${item.price}</span>
 
           <a
-            href={`https://wa.me/5493415957226?text=Hola! Quiero cotizar el producto: ${item.title}`}
+            href={`https://wa.me/529982017863?text=Hola! Quiero cotizar el producto: ${item.title}`}
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-700 text-white rounded"
@@ -84,7 +83,23 @@ export default function CatalogCard({ item }) {
             Consultar por Whatsapp
           </a>
         </div>
+      
+
+      <div className="flex flex-wrap pt-4 gap-2">
+        {item.tags?.map(tag => (
+          <span
+            key={tag}
+            className="
+        text-xs px-2 py-0.5 rounded-full
+        bg-bg border border-border text-muted
+      "
+          >
+            #{tag}
+          </span>
+        ))}
       </div>
+        </div>
     </div>
+
   );
 }

@@ -65,7 +65,7 @@ export default function HeroSlider() {
           {/* CTA visible (toca cualquiera parte del slider gracias al overlay) */}
           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
             <span className="bg-black/50 text-white text-sm sm:text-base px-3 py-1 rounded-full backdrop-blur-sm">
-              Ver catálogo
+              Ver Productos
             </span>
           </div>
 

@@ -1,19 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import products from "../data/products";
 import placeholder from "../assets/placeholder.svg";
 
 export default function ProductoDetalle() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const producto = products.find(p => p.id === id);
-
-  const images =
-    producto?.images && producto.images.length
-      ? producto.images
-      : [placeholder];
-
-  const [activeImage, setActiveImage] = useState(images[0]);
-  const [zoomStyle, setZoomStyle] = useState({});
 
   if (!producto) {
     return (
@@ -25,6 +19,14 @@ export default function ProductoDetalle() {
       </section>
     );
   }
+
+  const images =
+    producto.images && producto.images.length
+      ? producto.images
+      : [placeholder];
+
+  const [activeImage, setActiveImage] = useState(images[0]);
+  const [zoomStyle, setZoomStyle] = useState({});
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } =
@@ -48,7 +50,7 @@ export default function ProductoDetalle() {
       {/* Galería */}
       <div className="space-y-4">
 
-        {/* Imagen principal con zoom */}
+        {/* Imagen principal con zoom (desktop) */}
         <div
           className="relative w-full h-96 bg-slate-900 rounded-lg overflow-hidden hidden md:block"
           onMouseMove={handleMouseMove}
@@ -72,13 +74,12 @@ export default function ProductoDetalle() {
             />
           )}
 
-          {/* Icono lupa */}
           <div className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
             🔍 Zoom
           </div>
         </div>
 
-        {/* Imagen mobile (sin zoom) */}
+        {/* Imagen mobile */}
         <img
           src={activeImage}
           alt={producto.title}
@@ -114,9 +115,7 @@ export default function ProductoDetalle() {
       <div className="space-y-4">
         <h1 className="text-3xl font-bold">{producto.title}</h1>
 
-        <p className="text-slate-400">
-          {producto.description}
-        </p>
+        <p className="text-slate-400">{producto.description}</p>
 
         <ul className="text-sm text-slate-300 space-y-1">
           <li>
@@ -141,7 +140,27 @@ export default function ProductoDetalle() {
         >
           Cotizar por WhatsApp
         </a>
+
+        
       </div>
+      {/* Botón volver */}
+        <button
+          onClick={() =>
+            window.history.length > 1
+              ? navigate(-1)
+              : navigate("/catalogo")
+          }
+          className="
+            mt-6
+            inline-flex items-center gap-2
+            text-sm font-medium
+            text-slate-300
+            hover:text-orange-400
+            transition
+          "
+        >
+          ← Volver
+        </button>
     </section>
   );
 }
